@@ -13,13 +13,19 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/coder-house")
+@RequestMapping("/tuheroku.app")
 public class MessageController {
 
     Logger logger = LogManager.getLogger(MessageController.class);
 
     @Autowired
     private PersonService personService;
+
+    @GetMapping("/hello")
+    public String getHeroku() {
+        logger.info("GET Hello, World");
+        return "Hello, World";
+    }
 
     @GetMapping("/mensajes/example")
     public String getMensajesString() {
